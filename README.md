@@ -98,11 +98,6 @@ PES introduces two core components:
 
 ---
 
-## Reference Documents
-
-- **[Plumbing Estimation Discovery Phase Recommendations](./notebooks/discovery/deliverable/Plumbing%20Estimation%20Discovery%20Phase%20Recommendations.md)** (October 28, 2025) - Detailed functionality and feature scope
-- **[Statement of Work (SOW)](./notebooks/scoping/REQ_SOW.md)** (November 7, 2025) - Contract and scope definition
-
 ---
 
 ## System Architecture
@@ -159,7 +154,7 @@ neptune-plumbing-estimator-2025/
 ## Additional Information
 
 ### LucidSpark Board
-[Project Collaboration Board](https://lucid.app/lucidspark/a0dc081f-e4b2-4e09-8094-a7cbc6dab0e5/edit?viewport_loc=-25576%2C-14812%2C38568%2C21524%2C0_0&invitationId=inv_ba4d5357-bd17-4d7d-b75b-f126b8409326)
+[Project Collaboration Board](https://lucid.app/lucidspark/a032c081f-e4b2-4e09-8094-a7cbc6dab0e5/edit?viewport_loc=-25576%2C-14812%2C38568%2C21524%2C0_0&invitationId=inv_ba4d5357-bd17-4d7d-b75b-f126b8409326)
 
 ### Development Environment
 - **Python Version**: 3.11.9
