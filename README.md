@@ -39,8 +39,6 @@ PES introduces two core components:
 - **Adam Wallenstein** - President
 - **Michael Wallenstein** - Reviewer
 
-### TomorrowToday LLC
-- **Dave Foster** - Partner, CTO
 
 ---
 
