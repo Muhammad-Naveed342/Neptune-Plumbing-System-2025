@@ -39,6 +39,8 @@ PES introduces two core components:
 - **Adam Wallenstein** - President
 - **Michael Wallenstein** - Reviewer
 
+### TomorrowToday LLC
+- **Dave Foster** - Partner, CTO
 
 ---
 
@@ -103,19 +105,53 @@ PES introduces two core components:
 
 ---
 
+## System Architecture
+
+The application follows a client-server architecture, dividing responsibilities between a React frontend and a FastAPI backend using Domain-Driven Design (DDD) principles.
+
+### Architecture Overview
+
+- **Frontend (React + Vite)**: A unified web application that serves both the **PES Onsite** (mobile-optimized for field technicians) and **PES Back-Office** (desktop-optimized for review and management).
+- **Backend (FastAPI)**: Implements DDD with isolated `domain/models`, `domain/repositories`, and `domain/services`. 
+- **Data Persistence**: Uses repositories for data management, currently configured for rapid prototyping and file-based caching.
+- **External Integrations**:
+  - **WinSupply Search**: Uses Playwright for headless scraping of the WinSupply website to iteratively extract facets and search products.
+  - **AI / LLM / OCR**: Uses LangChain and OpenAI/Google GenAI for parsing handwritten forms and extracting structure.
+
+### Access & User Roles
+1. **Technician**: Accesses mobile screens to submit "Not Complete" or "Change Order" forms.
+2. **Back Office**: Reviews, adjusts, and finalizes forms submitted by technicians. Forms are locked from technician edits once submitted.
+3. **Admin**: Manages system settings and user administration.
+
+---
+
 ## Project Structure
 
-```
+```text
 neptune-plumbing-estimator-2025/
-├── notebooks/
-│   └── scoping/
-│       ├── arch/              # Architecture documentation
-│       ├── discovery/         # Discovery phase documents
-│       └── REQ_SOW.md        # Extracted SOW requirements
-├── volatile/                  # Temporary files (git-ignored)
-│   ├── tmp/                  # Temporary working files
-│   └── credentials/          # Credentials (git-ignored)
-└── README.md                 # This file
+├── notebooks/                 # Documentation and scoping documents
+│   ├── discovery/             # Discovery phase documents
+│   ├── scoping/               # Architecture and SOW requirements
+│   └── toto-code-review/      # Code review materials
+├── src/                       # Application Source Code
+│   ├── backend/               # FastAPI backend
+│   │   ├── domain/            # Domain models, repositories, services (DDD approach)
+│   │   ├── email_bot/         # Email processing worker
+│   │   ├── prompts/           # LLM prompts
+│   │   ├── routes/            # API endpoints
+│   │   ├── templates/         # Export templates (Word, Excel)
+│   │   └── workers/           # Background workers
+│   ├── frontend/              # React/Vite frontend (PES Mobile and Back-Office)
+│   ├── persist/               # Initial data models and seed data
+│   └── totodev/               # Development utilities
+├── tests/                     # Pytest suite
+│   ├── fixtures/              # Test fixtures
+│   ├── repositories/          # Repository tests
+│   └── services/              # Service tests
+├── volatile/                  # Temporary files and credentials (git-ignored)
+├── docker-compose.yml         # Container configuration
+├── pyproject.toml             # Python dependencies and project settings
+└── README.md                  # This file
 ```
 
 ---
