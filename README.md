@@ -162,7 +162,7 @@ neptune-plumbing-estimator-2025/
 - **Virtual Environment**: `.venv/` (activated with `source .venv/bin/activate`)
 - **Source Path**: `src/` is in PYTHONPATH
 - **Testing**: pytest (tests located in `tests/`)
-- **Configuration**: Environment-specific config via `config._THIS_IS_DEVDAVE_ENV_.sh`
+- **Configuration**: Environment-specific config via `config._THIS_IS_DEVNAVEED_ENV_.sh`
 
 ### Hosting
 Production environment will be hosted within TomorrowToday's managed hosting infrastructure.
